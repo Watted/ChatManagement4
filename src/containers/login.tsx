@@ -29,7 +29,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
     constructor(props:ILoginProps){
         super(props);
         this.state = {
-            user: {name: '', password: ''}
+            user: {name: 'Mohammed', password: '0000'}
         };
     }
 
@@ -59,8 +59,8 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                         <Link to='/'><button className='Exit'>Exit</button></Link>
                     </div>
                     <div className="InputArea">
-                        <Field className="InputArea" name={'name'} type={'text'} onChange={this.updateField}/>
-                        <Field className="InputArea" name={'password'} type={'password'} onChange={this.updateField}/>
+                        <Field className="InputArea" name={'name'} type={'text'} value={'Mohammed'} onChange={this.updateField}/>
+                        <Field  className="InputArea" name={'password'} type={'password'} value={'0000'} onChange={this.updateField}/>
                         <button className="btnLogIn" disabled={!this.state.user.name || !this.state.user.password} type="button" onClick={this.submitHandler}>Login</button>
                         <p style={{color:this.colors[this.props.loginStatus]}}>{this.messages[this.props.loginStatus]}</p>
                     </div>

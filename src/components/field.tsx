@@ -5,7 +5,8 @@ interface IFieldProps {
     name: string,
     type?: string,
     onChange(field:string, value:string):void,
-    className?:string
+    className?:string,
+    value:string
 }
 
 const Field:React.StatelessComponent<IFieldProps> = (props) => {
@@ -16,7 +17,7 @@ const Field:React.StatelessComponent<IFieldProps> = (props) => {
     return(
         <p>
             <label className="TextLabel" htmlFor={props.name}>{props.name}:</label>
-            <input className="TextInput" type={props.type || 'text'} name={props.name} onChange={extractValue}/>
+            <input className="TextInput" defaultValue={props.value} type={props.type || 'text'} name={props.name} onChange={extractValue}/>
         </p>
     )
 };
